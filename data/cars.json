@@ -1,0 +1,23 @@
+[
+  {
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": "2018",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDbpObJ1dU2CI5aUtDAedsyPjL2dRfsNQH4g&s",
+    "price": "30"
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "year": "2020",
+    "image": "https://via.placeholder.com/200x150",
+    "price": "35"
+  },
+  {
+    "make": "Ford",
+    "model": "Focus",
+    "year": "2019",
+    "image": "https://via.placeholder.com/200x150",
+    "price": "32"
+  }
+]
