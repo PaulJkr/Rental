@@ -79,3 +79,18 @@ menuBtn.addEventListener("click", () => {
     navList.style.maxHeight = null;
   }
 });
+
+// Function to navigate to About Us page
+function navigateToAboutUs() {
+  window.location.href = "about-us.php";
+}
+
+// Add this event listener to your existing code
+document.querySelector(".nav-list").addEventListener("click", function (e) {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
+    if (e.target.textContent === "About Us") {
+      navigateToAboutUs();
+    }
+  }
+});
