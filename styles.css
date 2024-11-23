@@ -183,3 +183,40 @@ li {
   font-size: 0.9rem;
   line-height: 1.8;
 }
+
+.logo-img {
+  width: 150px; /* Adjust as needed */
+  height: auto;
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 100px; /* Adjust as needed */
+}
+
+.main-nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.main-nav li {
+  margin-left: 20px;
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #007bff; /* Match your brand color */
+}
