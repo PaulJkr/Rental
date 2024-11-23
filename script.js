@@ -13,6 +13,7 @@ function renderCars(cars) {
   cars.forEach((car) => {
     const carCard = document.createElement("div");
     carCard.className = "car-card";
+    carCard.id = `car-${cars.indexOf(car)}`; // Set the ID based on the index
     carCard.innerHTML = `
             <img src="${car.image}" alt="${car.make} ${car.model}">
             <div class="card-content">
@@ -28,12 +29,40 @@ function renderCars(cars) {
 
   // Add event listener for booking button
   carGrid.querySelectorAll(".book-button").forEach((button) => {
-    button.addEventListener("click", () => {
-      alert(
-        `Booking confirmed for ${
-          button.closest(".card-content").querySelector("h3").textContent
-        }`
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      console.log(
+        "Booking clicked for:",
+        this.closest(".card-content").querySelector("h3").textContent
       );
+
+      const carDetails = {
+        make: this.closest(".card-content").querySelector("h3").textContent,
+        model: this.closest(".card-content")
+          .querySelector("p:nth-child(2)")
+          .textContent.split(":")[1]
+          .trim(),
+        year: this.closest(".card-content")
+          .querySelector("p:nth-child(3)")
+          .textContent.split(":")[1]
+          .trim(),
+        price: this.closest(".card-content")
+          .querySelector("p:nth-child(3)")
+          .textContent.split(":")[1]
+          .split("/")[0],
+      };
+
+      console.log("Redirecting to booking.php with params:", carDetails);
+
+      setTimeout(() => {
+        window.location.href = `booking.php?make=${encodeURIComponent(
+          carDetails.make
+        )}&model=${encodeURIComponent(
+          carDetails.model
+        )}&year=${encodeURIComponent(
+          carDetails.year
+        )}&price=${encodeURIComponent(carDetails.price)}`;
+      }, 100); // Add a 100ms delay
     });
   });
 }
