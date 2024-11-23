@@ -41,7 +41,27 @@
             </form>
 
             <div class="car-grid">
-                <!-- Cars will be dynamically inserted here -->
+                <?php
+                $cars = [
+                    ["make" => "Toyota", "model" => "Corolla", "year" => 2019, "price" => 30, "image" => "toyota-corolla.jpg"],
+                    ["make" => "Honda", "model" => "Civic", "year" => 2020, "price" => 35, "image" => "honda-civic.jpg"],
+                    ["make" => "Ford", "model" => "Focus", "year" => 2018, "price" => 32, "image" => "ford-focus.jpg"]
+                ];
+
+                foreach ($cars as $i => $car):
+                    echo "
+                        <div class=\"car-card\" id=\"car-$i\">
+                            <img src=\"$car[image]\" alt=\"$car[make] $car[model]\">
+                            <div class=\"card-content\">
+                                <h3>$car[make] $car[model]</h3>
+                                <p>Year: $car[year]</p>
+                                <p>Price: \$$car[price]/day</p>
+                                <button class=\"book-button\">Book Now</button>
+                            </div>
+                        </div>
+                    ";
+                endforeach;
+                ?>
             </div>
         </section>
 
